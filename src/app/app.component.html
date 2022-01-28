@@ -41,8 +41,9 @@
 
     <div class="input-group mb-3">
       <input type="text" class="form-control m-lg-1 w-25" [(ngModel)]="scity" placeholder="Enter City Name" aria-label="Username">
-      <button type="button" class="btn btn-primary m-lg-1 w-25" (click)="ongo()">GO!</button>
+      <button type="button" [disabled]="loading" class="btn btn-primary m-lg-1 w-25" (click)="ongo()">GO!</button>
     </div>
+    <img class="spinner" *ngIf="loading" src="/src/assets/spinner.gif"/>
   </main>
 
   <footer class="mt-auto text-white-50">

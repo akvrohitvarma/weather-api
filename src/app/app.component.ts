@@ -19,6 +19,7 @@ export class AppComponent {
   pressure="";
   temps:any;
   error:any;
+  loading = false;
   constructor(private wdata:WeatherDataService){
     this.wdata.getdata("Visakhapatnam").subscribe(data=>{
       console.log("data ",data);
@@ -30,13 +31,11 @@ export class AppComponent {
       this.min_temp = obj.main.temp_min;
       this.max_temp = obj.main.temp_max;
       this.pressure = obj.main.pressure;
-    },(error) => {
-      console.log(error)
-      this.error = error
-    })
+    },)
   }
 
   ongo(){
+    this.loading = true;
     this.wdata.getdata(this.scity).subscribe(data=>{
       console.log("data ",data);
       var obj = JSON.parse(JSON.stringify(data));
@@ -52,5 +51,6 @@ export class AppComponent {
       alert("The City which you entered does not exist!!")
       this.error = error
     })
+    this.loading = false;
   }
 }
