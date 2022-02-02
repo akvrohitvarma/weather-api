@@ -7,6 +7,7 @@ import { catchError, Observable, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class WeatherDataService {
+  result:any;
 
   constructor(public data:HttpClient) { }
   getdata(cityname:string):Observable<any>{

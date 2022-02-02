@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,200;0,600;1,700;1,900&display=swap');
+
+body {
+    background-image: url('assets/background.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.bg-card{
+    border-radius: 50px;
+    // background: linear-gradient(to right, #8942a8, #ba382f);
+    background: linear-gradient(to right, #48c6ef, #6f86d6);
+}
+
+.temp-details{
+    text-indent: 25px;
+}
